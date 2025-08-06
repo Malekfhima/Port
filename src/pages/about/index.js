@@ -9,7 +9,6 @@ import {
   skills,
   services,
 } from "../../content_option";
-
 export const About = () => {
   return (
     <HelmetProvider>

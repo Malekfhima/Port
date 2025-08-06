@@ -5,7 +5,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
-
 export const ContactUs = () => {
   const [formData, setFormdata] = useState({
     email: "",
@@ -16,18 +15,15 @@ export const ContactUs = () => {
     alertmessage: "",
     variant: "",
   });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormdata({ loading: true });
-
     const templateParams = {
       from_name: formData.email,
       user_name: formData.name,
       to_name: contactConfig.YOUR_EMAIL,
       message: formData.message,
     };
-
     emailjs
       .send(
         contactConfig.YOUR_SERVICE_ID,
@@ -56,14 +52,12 @@ export const ContactUs = () => {
         }
       );
   };
-
   const handleChange = (e) => {
     setFormdata({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
   return (
     <HelmetProvider>
       <Container>

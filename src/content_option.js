@@ -2,6 +2,7 @@
 import gestionstock from "./assets/images/gestionstock.png";
 import img from "./assets/images/profile.jpg";
 
+const ismaik = "https://ismaik.rnu.tn/";
 const logotext = "MALEK";
 const meta = {
   title: "Malek - Portfolio",
@@ -33,7 +34,6 @@ const worktimeline = [
     where: "INRITS AGENCY",
     date: "2025",
   },
-  
 ];
 
 const skills = [
@@ -139,11 +139,19 @@ const certificates = [
 
 const education = [
   {
+    degree: "Baccalauréat en Sciences Informatiques",
+    institution: "Lycée Secondaire Farhat Hached M'saken",
+    date: "2022 - 2023",
+    description:
+      "Formation technique de base avec spécialisation en sciences et technologies.",
+    link: "",
+  },
+  {
     degree: "Licence en Ingénierie des systèmes d'information",
     institution: "ISMAI Kairouan",
     date: "2023 - 2024",
     description: "Formation complète en Ingénierie des systèmes d'information",
-    link: "https://ismaik.rnu.tn/",
+    link: ismaik,
   },
   {
     degree: "Licence en Internet des Objets et Systèmes Embarqués",
@@ -152,14 +160,6 @@ const education = [
     description:
       "Formation complète en Internet des Objets et Systèmes Embarqués",
     link: "https://isitcom.rnu.tn/",
-  },
-  {
-    degree: "Baccalauréat en Sciences Informatiques",
-    institution: "Lycée Secondaire Farhat Hached M'saken",
-    date: "2022 - 2023",
-    description:
-      "Formation technique de base avec spécialisation en sciences et technologies.",
-    link: "",
   },
 ];
 
@@ -177,7 +177,7 @@ const contactConfig = {
 
 const socialprofils = {
   github: "https://github.com/Malekfhima",
-  linkedin:"www.linkedin.com/in/malek-fhima-1898a8349",
+  linkedin: "www.linkedin.com/in/malek-fhima-1898a8349",
   twitter: "https://twitter.com/malek_dev",
   instagram: "https://instagram.com/malek_dev",
 };

@@ -3,7 +3,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { certificates, meta } from "../../content_option";
 import "./style.css";
-
 const Certificates = () => {
   return (
     <HelmetProvider>
@@ -19,7 +18,6 @@ const Certificates = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-
         <Row className="sec_sp">
           <Col lg="12">
             <p className="text-center mb-5">
@@ -28,7 +26,6 @@ const Certificates = () => {
             </p>
           </Col>
         </Row>
-
         <Row className="sec_sp">
           {certificates.map((cert, index) => (
             <Col key={index} lg="8" md="10" sm="12" className="mx-auto">
@@ -54,7 +51,6 @@ const Certificates = () => {
             </Col>
           ))}
         </Row>
-
         <Row className="sec_sp">
           <Col lg="12"></Col>
         </Row>
@@ -62,5 +58,4 @@ const Certificates = () => {
     </HelmetProvider>
   );
 };
-
 export default Certificates;

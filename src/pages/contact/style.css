@@ -94,9 +94,9 @@
 }
 
 button.btn.ac_btn {
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  background: linear-gradient(45deg, #fff, #fff);
   border: none;
-  color: white;
+  color: #000000;
   padding: 12px 30px;
   border-radius: 25px;
   font-weight: 600;
@@ -110,8 +110,7 @@ button.btn.ac_btn {
 button.btn.ac_btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
-  color: white;
+
 }
 
 address {
