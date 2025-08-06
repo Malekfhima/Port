@@ -1,0 +1,374 @@
+.sec_sp {
+  margin-bottom: calc(3rem + 5.128vw);
+  padding: 60px 0;
+}
+
+.About-header {
+  background: #0c0c0c;
+  min-height: 100vh;
+  padding: 40px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.About-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.About-header h1 {
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.About-header .t_border {
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  height: 4px;
+  border: none;
+  border-radius: 2px;
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.About-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.table {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.table td,
+.table th {
+  color: white;
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.t_border {
+  border-color: var(--text-color) !important;
+}
+
+.color_sec {
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 2rem;
+  animation: fadeInUp 1s ease-out 0.9s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 20px 0 15px;
+  font-family: "Raleway";
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out both;
+  opacity: 0;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+}
+
+.progress-title .skill-percentage {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.progress {
+  height: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out both;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.progress .progress-bar {
+  position: relative;
+  background: linear-gradient(90deg, #fff, #fff);
+  background-size: 300% 100%;
+  border-radius: 25px;
+  animation: progressFill 2.5s ease-out both,
+    gradientMove 4s ease-in-out infinite;
+  overflow: visible;
+  opacity: 0;
+  animation-fill-mode: both;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress .progress-value {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.6s ease-out 1.5s both;
+  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes progressFill {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  }
+}
+
+@-webkit-keyframes animate-positive {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: var(--progress-width);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-positive {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: var(--progress-width);
+    opacity: 1;
+  }
+}
+
+.section-title {
+  font-size: 45px;
+}
+
+.service__title {
+  padding: 15px 0;
+  border-bottom: solid 3px #fff;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  position: relative;
+  animation: fadeInUp 1s ease-out 1.8s both;
+}
+
+.service__title::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+
+  border-radius: 2px;
+}
+
+.service_desc {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 1rem;
+  animation: fadeInUp 1s ease-out 2.1s both;
+}
+
+.service_ {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 2.4s both;
+}
+
+.service_:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.service-section .service-category-title {
+  padding-bottom: 4px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .About-header {
+    padding: 20px 0;
+  }
+
+  .About-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .color_sec {
+    font-size: 1.5rem;
+  }
+
+  .service_ {
+    padding: 20px;
+  }
+
+  .table td,
+  .table th {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .About-header h1 {
+    font-size: 2rem;
+  }
+
+  .color_sec {
+    font-size: 1.3rem;
+  }
+
+  .progress-title {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .service_ {
+    padding: 15px;
+  }
+}
+
+.skill-item {
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+}
+
+.skill-item:hover .progress-bar {
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+.skill-item:hover .skill-percentage {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
