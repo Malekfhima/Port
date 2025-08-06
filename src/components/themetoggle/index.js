@@ -18,7 +18,7 @@ const Themetoggle = () => {
   useEffect(() => {
     // Appliquer le thème au chargement de la page
     document.documentElement.setAttribute("data-theme", theme);
-  },);
+  });
   return (
     <div className="nav_ac" onClick={themetoggle} title="Changer le thème">
       <WiMoonAltWaningCrescent4 />
