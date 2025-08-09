@@ -17,6 +17,24 @@ export const ContactUs = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Vérifier si EmailJS est configuré
+    if (
+      contactConfig.YOUR_SERVICE_ID === "service_id" ||
+      contactConfig.YOUR_TEMPLATE_ID === "template_id" ||
+      contactConfig.YOUR_USER_ID === "user_id"
+    ) {
+      setFormdata({
+        loading: false,
+        alertmessage:
+          "EmailJS n'est pas configuré. Veuillez configurer vos clés dans content_option.js",
+        variant: "warning",
+        show: true,
+      });
+      document.getElementsByClassName("co_alert")[0].scrollIntoView();
+      return;
+    }
+
     setFormdata({ loading: true });
     const templateParams = {
       from_name: formData.email,
@@ -43,8 +61,23 @@ export const ContactUs = () => {
         },
         (error) => {
           console.log(error.text);
+          let errorMessage = "Échec de l'envoi ! ";
+
+          // Messages d'erreur plus clairs
+          if (error.text.includes("Public Key is invalid")) {
+            errorMessage +=
+              "Configuration EmailJS incorrecte. Vérifiez vos clés dans content_option.js";
+          } else if (error.text.includes("Service ID")) {
+            errorMessage += "Service ID EmailJS invalide";
+          } else if (error.text.includes("Template ID")) {
+            errorMessage += "Template ID EmailJS invalide";
+          } else {
+            errorMessage += error.text;
+          }
+
           setFormdata({
-            alertmessage: `Échec de l'envoi ! ${error.text}`,
+            loading: false,
+            alertmessage: errorMessage,
             variant: "danger",
             show: true,
           });

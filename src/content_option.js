@@ -168,11 +168,10 @@ const contactConfig = {
   YOUR_FONE: "+216 25 992 977",
   description:
     "N'hésitez pas à me contacter pour discuter de vos projets ou opportunités de collaboration. Je suis toujours ouvert aux nouvelles opportunités passionnantes.",
-  // creat an emailjs.com account
-  // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-  YOUR_SERVICE_ID: "service_id",
-  YOUR_TEMPLATE_ID: "template_id",
-  YOUR_USER_ID: "user_id",
+  // Configuration EmailJS - Mise à jour avec vos vraies clés
+  YOUR_SERVICE_ID: "service_i0fjjrz", // Service ID Gmail configuré
+  YOUR_TEMPLATE_ID: "template_d73lfvr", // Votre vrai Template ID
+YOUR_USER_ID: "user_xyz789", // Votre vraie Public Key
 };
 
 const socialprofils = {
